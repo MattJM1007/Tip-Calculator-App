@@ -32,7 +32,7 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 100dvh;
     font-family: "Space Mono", serif;
 }
 
@@ -45,7 +45,7 @@ body{
     margin: 5rem 0 1rem 0;
     color: var(--nc_Dark-grayish-cyan);
     border-radius: 1.5rem;
-    max-width: min(920px, 90%);
+    max-width: min(850px, 90%);
 }
 
 fieldset{
@@ -110,11 +110,11 @@ input[type=number]:focus{
     background-color: var(--nc_Very-dark-cyan);
     color: white;
     font-family: "Space Mono", serif;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-weight: var(--fw_bold);
     border: none;
     border-radius: 0.3rem;
-    padding: 0.2rem 0;
+    /* padding: 0.2rem; */
     text-align: center;
 }
 
@@ -178,6 +178,11 @@ input[type=number]:focus{
     color: var(--nc_Grayish-cyan);
 }
 
+.tip-output div:nth-of-type(2){
+    margin-bottom: 8rem;
+}
+
+
 .reset-button{
     width: 100%;
     padding: 0.5rem;
@@ -223,7 +228,7 @@ input::-webkit-inner-spin-button {
     color: hsl(228, 45%, 44%); 
 }
 
-@media (max-width: 790px){
+@media (max-width: 860px){
     body{
         height: auto;
         margin-top: 3rem;
@@ -231,17 +236,23 @@ input::-webkit-inner-spin-button {
     
     .flex-container{
         flex-direction: column;
-        max-width: 90%;
+        max-width: 100%;
     }
 
-    .tip-button{
+    .tip-button, .tip-button-custom{
         padding: 0.8rem;
+        flex: 1 1 30%;
     }
     .user-input{
         max-width: 100%;
     }
     
-    .calculated-tip, .calculated-total {
+    #calculated-tip, #calculated-total {
         font-size: 2rem;
     }
+
+    .tip-output div:nth-of-type(2){
+        margin-bottom: 2rem;
+    }
+    
 }
