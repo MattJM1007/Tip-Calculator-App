@@ -25,7 +25,7 @@
       <section class="user-input">
         <fieldset class="total-bill">
           <legend class="bill-label">Bill</legend>
-          <input type="number" id="total-bill-input" placeholder="0" />
+          <input type="number" id="total-bill-input" placeholder="0" inputmode="numeric" />
           <i class="dollar-symbol icon"
             ><img
               src="./images/icon-dollar.svg"
@@ -46,6 +46,7 @@
             class="tip-button-custom"
             id="custom-tip-percentage"
             placeholder="Custom"
+            inputmode="numeric"
           />
         </fieldset>
 
@@ -54,7 +55,7 @@
             Number of People
             <span class="error-message hidden">Can't be zero</span>
           </legend>
-          <input type="number" id="total-people-input" class="" placeholder="0" />
+          <input type="number" id="total-people-input" class="" placeholder="0" inputmode="numeric"/>
           <i class="people-symbol icon"
             ><img
               src="./images/icon-person.svg"
