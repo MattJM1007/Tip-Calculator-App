@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+
     <link rel="stylesheet" href="style.css" />
     <script src="./index.js" defer></script>
 
@@ -12,49 +17,64 @@
   </head>
 
   <body>
-    <header class="logo-wrapper">
-      <img src="./images/logo.svg" alt="splitter logo" class="logo" />
+    <header class="primary-header">
+      <img src="./images/logo.svg" alt="" />
     </header>
 
-    <main class="flex-container">
-      <section class="user-input">
-        <fieldset class="total-bill">
-          <legend class="bill-label">Bill</legend>
-          <input type="number" id="total-bill-input" placeholder="0" inputmode="numeric" />
-          <i class="dollar-symbol icon"><img src="./images/icon-dollar.svg" alt="dollar icon" class="dollar-icon" /></i>
-        </fieldset>
+    <main>
+      <div class="flex-wrapper">
+        <h1 class="visually-hidden">Tip Calculator</h1>
 
-        <fieldset class="tip-percentage">
-          <legend class="percent-label">Select Tip %</legend>
-          <button class="tip-button" id="5">5%</button>
-          <button class="tip-button" id="10">10%</button>
-          <button class="tip-button" id="15">15%</button>
-          <button class="tip-button" id="25">25%</button>
-          <button class="tip-button" id="50">50%</button>
-          <input type="number" class="tip-button-custom" id="custom-tip-percentage" placeholder="Custom" inputmode="numeric" />
-        </fieldset>
+        <form class="tip-form flow-content">
+          <div class="form-group">
+            <label for="total-bill">Bill</label>
+            <input type="number" id="total-bill" placeholder="0" inputmode="numeric" />
+            <img src="./images/icon-dollar.svg" alt="" class="icon" />
+          </div>
 
-        <fieldset class="number-of-people">
-          <legend class="people-label">
-            Number of People
-            <span class="error-message hidden">Can't be zero</span>
-          </legend>
-          <input type="number" id="total-people-input" class="" placeholder="0" inputmode="numeric" />
-          <i class="people-symbol icon"><img src="./images/icon-person.svg" alt="person icon" class="person-icon" /></i>
-        </fieldset>
-      </section>
+          <fieldset class="form-group grid-wrapper">
+            <legend class="label">Select Tip %</legend>
 
-      <section class="tip-output">
-        <div>
-          <p class="tip-amount-label">Tip Amount <span>/ person</span></p>
-          <p id="calculated-tip">$0.00</p>
+            <input type="radio" name="tip-percentage" id="tip-5" value="5" />
+            <label for="tip-5" class="btn">5%</label>
+
+            <input type="radio" name="tip-percentage" id="tip-10" value="10" />
+            <label for="tip-10" class="btn">10%</label>
+
+            <input type="radio" name="tip-percentage" id="tip-15" value="15" />
+            <label for="tip-15" class="btn">15%</label>
+
+            <input type="radio" name="tip-percentage" id="tip-25" value="25" />
+            <label for="tip-25" class="btn">25%</label>
+
+            <input type="radio" name="tip-percentage" id="tip-50" value="50" />
+            <label for="tip-50" class="btn">50%</label>
+
+            <label for="custom-tip-input" class="visually-hidden">Enter custom tip percentage</label>
+            <input type="number" id="custom-tip-input" placeholder="Custom" inputmode="numeric" />
+          </fieldset>
+
+          <div class="form-group">
+            <label for="total-people">Number of People</label>
+            <input type="number" id="total-people" placeholder="0" inputmode="numeric" />
+            <img src="./images/icon-person.svg" alt="" class="icon" />
+          </div>
+        </form>
+
+        <div class="tip-results flow-content">
+          <div class="flex-center">
+            <p>Tip Amount<span>/ person</span></p>
+            <p class="result">$0.00</p>
+          </div>
+
+          <div class="flex-center">
+            <p>Total<span>/ person</span></p>
+            <p class="result">$0.00</p>
+          </div>
+
+          <button class="btn btn--secondary">Reset</button>
         </div>
-        <div>
-          <p class="total-label">Total <span>/ person</span></p>
-          <p id="calculated-total">$0.00</p>
-        </div>
-        <button class="reset-button">Reset</button>
-      </section>
+      </div>
     </main>
 
     <footer class="attribution">
