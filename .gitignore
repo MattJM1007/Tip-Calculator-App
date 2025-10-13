@@ -1,0 +1,7 @@
+*_old*
+instructions.md
+/Figma*
+/design  
+.DS_Store
+node_modules/
+.env
