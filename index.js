@@ -31,18 +31,14 @@ function clearTipButtons() {
 
 //get tip value
 function getTipPercent() {
-  if (tipPercentCustom.value) {
-    return tipPercentCustom.value;
-  }
-
   const checkedButton = document.querySelector('input[name="tip-percentage"]:checked');
-  return checkedButton ? checkedButton.value : 0;
+  return checkedButton ? checkedButton.value : tipPercentCustom.value;
 }
 
 //calculate result & update DOM
 function calculateResult() {
   const total = parseFloat(totalBillInput.value) || 0;
-  const tipPercentage = parseFloat(getTipPercent()) / 100;
+  const tipPercentage = parseFloat(getTipPercent()) / 100 || 0;
   const numberOfPeople = parseInt(totalPeopleInput.value);
 
   if (!numberOfPeople) return;
